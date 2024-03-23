@@ -6,7 +6,7 @@ import rehypeRaw from "rehype-raw";
 
 const Content = () => {
     const blog=useLoaderData();
-    const {cover_image,title,description,published_at,id,tags,body_html,url}=blog;
+    const {cover_image,title,tags,body_html,url}=blog;
     return (
         <div   className=" mx-auto group  
             hover:no-underline p-2 border-2 focus:no-underline">
@@ -19,7 +19,7 @@ const Content = () => {
                     
                    
                 </div>
-				<div className=" space-y-2">
+				<div className=" space-y-2 ">
 					<a href={url}  target='_blank' className="text-2xl font-semibold group-hover:underline group-focus:underline">{title}</a>
 					<Markdown rehypePlugins={rehypeRaw}>{body_html}</Markdown>
 				</div>
